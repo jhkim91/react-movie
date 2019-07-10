@@ -22,7 +22,20 @@ const movies = [
 ]
 
 class App extends Component {
+  // Render: componentWillMount() -> render() -> componentDidMount() / component 가 존재할경우
+  // Update componentWillReceiveProps() -> shouldComponentUpdate() -> componentWillUpdate() -> render() -> component
+
+  componentWillMount(){
+    console.log("1.will mount");
+  }
+
+  componentDidMount(){
+    console.log("3.did mount");
+  }
+
+
   render() {
+    console.log("2.render");
     return (
         <div className="App">
           {movies.map((movie, index) => {
