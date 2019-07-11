@@ -12,10 +12,14 @@ class App extends Component {
 
   componentDidMount(){
     console.log("3.did mount");
-    setTimeout(() => {
+    fetch('https://yts.lt/api/v2/list_movies.json?sort_by=rating')
+        .then(response => response.json())
+        .then(json => console.log(json))
+        .catch(err => console.log(err))
+    /*setTimeout(() => {
       this.setState({
         movies: [
-          /* ...this.state.movies */
+          /!* ...this.state.movies *!/
           {
             title: "모어 댄 블루",
             poster: "https://movie-phinf.pstatic.net/20181128_141/1543382638212PApzR_JPEG/movie_image.jpg?type=m665_443_2"
@@ -38,7 +42,7 @@ class App extends Component {
           }
         ]
       })
-    }, 2000)
+    }, 2000)*/
   }
 
   state = {}
